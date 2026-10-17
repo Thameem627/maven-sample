@@ -17,6 +17,7 @@ pipeline {
                 
                 // Optional: Run a list command to verify the directory was created
                 sh 'ls -la'
+                sh "touch file1.sh"
 		        sh "chmod +x file1.sh"
 
 		        sh "./file1.sh"
