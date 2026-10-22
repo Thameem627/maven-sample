@@ -22,8 +22,8 @@ pipeline {
        stage('Build') {
          steps {
             echo 'Hi this is for testing'
-               sh 'mvn --version'
-             //sh 'mvn clean package'
+                sh 'mvn --version'
+                sh 'mvn clean package'
          }
 
     }
