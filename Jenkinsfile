@@ -4,10 +4,6 @@ pipeline {
      M2_HOME = '/usr/local/maven'                  // for maven build
      PATH = "env.M2HOME/bin:{env.PATH}"       // for maven build
     }
-    triggers {
-        githubPush()
-    }
-
     stages {
        /* stage('Checkout') {                   //when using pipeline script inside jenkins
             steps {
@@ -23,25 +19,12 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Pre check') {
-          when {
-            changeset "src/main/**"
-        }
-         steps {
-           script {
-            env.BUILDME = "yes"
-            echo "Changes detected in src/main"
-        }
-    }
-}
        stage('Build') {
-         when { environment name: 'BUILDME', value: 'yes' }
          steps {
-            echo 'Hi...changes detected now building'
+            echo 'building '
             sh 'mvn clean package'
-            //mvn
-              
-                    }
+         }
+
     }
 }
 }
