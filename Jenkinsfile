@@ -1,7 +1,7 @@
 pipeline {
      agent { label 'test1' }
      options {
-          timeout (time: 30, unit: 'SECONDS')
+          timeout(time:30,unit:'SECONDS')
           timestamp()
      }
      environment {
@@ -26,8 +26,10 @@ pipeline {
        stage('Build') {
          steps {
             echo 'Hi this is for testing'
-                sh 'mvn --version'
-                sh 'mvn clean package'
+               sh 'ls'
+               sh 'pwd'
+               //sh 'mvn --version'
+                //sh 'mvn clean package'
          }
 
     }
