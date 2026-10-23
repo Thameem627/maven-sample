@@ -1,5 +1,9 @@
 pipeline {
      agent { label 'test1' }
+     options {
+          timeout (time: 30, unit: 'SECONDS')
+          timestamp()
+     }
      environment {
      M2_HOME = '/usr/local/maven'                  // for maven build
      PATH = "env.M2HOME/bin:{env.PATH}"       // for maven build
