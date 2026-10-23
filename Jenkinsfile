@@ -2,7 +2,7 @@ pipeline {
      agent { label 'test1' }
      environment {
      M2_HOME = '/usr/local/maven'                  // for maven build
-     PATH = "env.M2HOME/bin:{env.PATH}"       // for maven build
+     PATH = "${env.M2_HOME}/bin:{env.PATH}"       // for maven build
     }
     stages {
        /* stage('Checkout') {                   //when using pipeline script inside jenkins
