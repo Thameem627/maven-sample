@@ -25,7 +25,22 @@ pipeline {
                 sh 'mvn --version'
                 sh 'mvn clean package'
          }
-
+       }
+        stage('Code Coverage')
+			{
+			    when {
+			        allOf {
+			            expression { return params.CODEANALYSIS }
+			            environment name: 'BUILDME', value: 'yes'
+			        }
+			    }
+			
+			    steps {
+			        echo "Running Code Coverage ..."
+					//dir ("./src/main")
+			            sh "mvn org.jacoco:jacoco-maven-plugin:0.5.5.201112152213:prepare-agent"
+			    }
+			}
     }
 }
-}
+
