@@ -28,12 +28,12 @@ pipeline {
        }
         stage('Code Coverage')
 			{
-			    when {
+			    /*when {
 			        allOf {
 			            expression { return params.CODEANALYSIS }
 			            environment name: 'BUILDME', value: 'yes'
 			        }
-			    }
+			    } */
 			
 			    steps {
 			        echo "Running Code Coverage ..."
