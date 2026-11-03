@@ -40,7 +40,7 @@ pipeline {
 					//dir ("./src/main")
 			            sh "mvn org.jacoco:jacoco-maven-plugin:0.5.5.201112152213:prepare-agent"
 			    }
-			}
+		
 			post {
     			success {
         			// Tells Jenkins to read the .exec file and build a web dashboard
